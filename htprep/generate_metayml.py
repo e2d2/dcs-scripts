@@ -13,7 +13,7 @@ parser.add_argument('file_template', metavar='[yml_template]',
                     help='template for meta.yml')
 parser.add_argument('file_pagedata', metavar='[csv_file]',
                     help='csv file with pagedata')
-parser.add_argument('-b', '--barcodes_folder', metavar='[barcodes_folder]',
+parser.add_argument('-b', '--barcodes-folder', metavar='[barcodes_folder]',
                     required=False, default='.',
                     help='folder with barcodes folders')
 args = parser.parse_args()
