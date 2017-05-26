@@ -29,8 +29,6 @@ file_pagedata = args.file_pagedata
 # Does the barcode folder as supplied exist?
 barcode = os.path.join(args.barcodes_folder, os.path.splitext(file_pagedata)[0])
 
-print(barcode)
-
 if not os.path.exists(barcode):
     sys.exit("Barcode folder doesn't exist")
 # TODO: Should there be a check for existing meta.yml?
@@ -39,6 +37,14 @@ if not os.path.exists(barcode):
 template = yaml.safe_load(open(file_template, 'rU', encoding='utf-8-sig'))
 pagedata = csv.DictReader(open(file_pagedata, 'rU', encoding='utf-8-sig'))
 
+# Valid pagedata column headings
+validcols = ['image number', 'orderlabel', 'label']
+
+# Verify column headings in pagedata
+for f in pagedata.fieldnames:
+    if f not in validcols:
+        sys.exit("Invalid column heading in metadata spreadsheet: '{0}'".format(f))
+            
 # Set up pagedata
 template['pagedata'] = {}
 
