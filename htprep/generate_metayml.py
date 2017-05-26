@@ -73,6 +73,3 @@ metayml_output = os.path.join(barcode, 'meta.yml')
 with open(metayml_output, 'w') as meta:
     meta.write(yaml.dump(template))
 
-# Close files
-template.close()
-pagedata.close()
