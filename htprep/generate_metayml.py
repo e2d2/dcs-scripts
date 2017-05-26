@@ -48,9 +48,19 @@ for f in pagedata.fieldnames:
 # Set up pagedata
 template['pagedata'] = {}
 
+# Valid label values
+validlabels = ['BACK_COVER', 'BLANK', 'CHAPTER_PAGE', 'CHAPTER_START', 'COPYRIGHT', 'FIRST_CONTENT_CHAPTER_START',
+               'FOLDOUT', 'FRONT_COVER', 'IMAGE_ON_PAGE', 'INDEX', 'MULTIWORK_BOUNDARY', 'PREFACE', 'REFERENCES',
+               'TABLE_OF_CONTENTS', 'TITLE', 'TITLE_PARTS']
+
 # Load in pagedata from csv
 for row in pagedata:
+    # Check for valid labels
+    if row['label'] not in validlabels:
+        sys.exit("Invalid label in metadata spreadsheet: '{0}'".format(row['label']))
+
     # TODO make the double quoting happen
+
     template['pagedata'][row['image number']] = {}
     if row['orderlabel'] != '':
         template['pagedata'][row['image number']]['orderlabel'] = row['orderlabel']
