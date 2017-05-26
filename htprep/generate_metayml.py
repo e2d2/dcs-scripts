@@ -29,6 +29,8 @@ file_pagedata = args.file_pagedata
 # Does the barcode folder as supplied exist?
 barcode = os.path.join(args.barcodes_folder, os.path.splitext(file_pagedata)[0])
 
+print(barcode)
+
 if not os.path.exists(barcode):
     sys.exit("Barcode folder doesn't exist")
 # TODO: Should there be a check for existing meta.yml?
@@ -54,3 +56,7 @@ metayml_output = os.path.join(barcode, 'meta.yml')
 
 with open(metayml_output, 'w') as meta:
     meta.write(yaml.dump(template))
+
+# Close files
+template.close()
+pagedata.close()
