@@ -37,12 +37,30 @@ if not os.path.exists(barcode):
 template = yaml.safe_load(open(file_template, 'rU', encoding='utf-8-sig'))
 pagedata = csv.DictReader(open(file_pagedata, 'rU', encoding='utf-8-sig'))
 
+# Valid pagedata column headings
+validcols = ['image number', 'orderlabel', 'label']
+
+# Verify column headings in pagedata
+for f in pagedata.fieldnames:
+    if f not in validcols:
+        sys.exit("Invalid column heading in metadata spreadsheet: '{0}'".format(f))
+            
 # Set up pagedata
 template['pagedata'] = {}
 
+# Valid label values
+validlabels = ['BACK_COVER', 'BLANK', 'CHAPTER_PAGE', 'CHAPTER_START', 'COPYRIGHT', 'FIRST_CONTENT_CHAPTER_START',
+               'FOLDOUT', 'FRONT_COVER', 'IMAGE_ON_PAGE', 'INDEX', 'MULTIWORK_BOUNDARY', 'PREFACE', 'REFERENCES',
+               'TABLE_OF_CONTENTS', 'TITLE', 'TITLE_PARTS']
+
 # Load in pagedata from csv
 for row in pagedata:
+    # Check for valid labels
+    if row['label'] not in validlabels:
+        sys.exit("Invalid label in metadata spreadsheet: '{0}'".format(row['label']))
+
     # TODO make the double quoting happen
+
     template['pagedata'][row['image number']] = {}
     if row['orderlabel'] != '':
         template['pagedata'][row['image number']]['orderlabel'] = row['orderlabel']
@@ -54,3 +72,4 @@ metayml_output = os.path.join(barcode, 'meta.yml')
 
 with open(metayml_output, 'w') as meta:
     meta.write(yaml.dump(template))
+
