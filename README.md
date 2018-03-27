@@ -1,9 +1,5 @@
 # dcs-scripts
 
-## Usage
+A collection of scripts deemed handy and helpful from Digital Curation Services at Cornell University Library.
 
-* `python3 evaluateHT.py [text_file_with_bibs.txt]`
-* `generate_metayml.py` - TODO
-* `md5zip.py` - TODO
-* `md5zip.sh` - TODO
-
+Any questions, ask Dianne (dd388 AT cornell DOT edu)
