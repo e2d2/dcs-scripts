@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o noclobber
+
 sdir=$(basename $1);
 if [[ -d ${sdir} ]]; then
     # First loop through and do checksum
