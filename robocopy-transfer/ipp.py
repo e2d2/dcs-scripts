@@ -2,6 +2,7 @@
 
 import re
 import os
+import sys
 from collections import defaultdict
 from datetime import datetime
 
@@ -28,6 +29,15 @@ def formatsize(numbytes):
     f = ('%.2f' % numbytes).rstrip('0').rstrip('.')
     formatted = '{0} {1}'.format(f, suffixes[i])
     return formatted
+
+
+# Ask about the path
+print("The current path is: {0}".format(os.getcwd()))
+print("If this is the robocopy directory, type YES to proceed.")
+prompt = input()
+if prompt != "YES":
+    sys.exit("Quitting. Please navigate to the robocopy directory and run the script again.")
+
 
 
 # Loop through everything and try to figure out which one is the log
