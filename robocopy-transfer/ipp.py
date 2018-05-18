@@ -17,6 +17,7 @@ extensions = defaultdict(lambda: 0)
 hf = []
 hfmatches = ['Thumbs.db', '.DS_Store']
 latest = [0,'']
+oldest = [315537897600, '']
 robocopy = None
 thisscript = os.path.abspath(os.path.basename(__file__))
 thispath = os.getcwd()
@@ -79,9 +80,14 @@ for dirpath, dirnames, filenames in os.walk(thispath): # TODO Fix this
         else:
             # Latest mod timestamp
             ts = os.path.getmtime(f)
+            print("are we here")
+            print(ts, oldest[0])
             if ts > latest[0]:
                 latest[0] = ts
                 latest[1] = f
+            if ts < oldest[0]:
+                oldest[0] = ts
+                oldest[1] = f
 
         # Extensions and Counts
         ext = os.path.splitext(f)[1]
@@ -113,9 +119,17 @@ print("Hidden files found: (None found if none listed)")
 for h in hf:
     print(h)
 print("\n")
-print("Most recent timestamp...")
-print("{0} : {1}".format(datetime.fromtimestamp(latest[0]), latest[1]))
-print("\n")
+
+# Hedge the time calculations (in case there's something weird about the folder)
+if latest != [0,'']:
+    print("Most recent timestamp...")
+    print("{0} : {1}".format(datetime.fromtimestamp(latest[0]), latest[1]))
+    print("\n")
+
+if oldest != [315537897600, ''] and oldest[1] != latest[1]:
+    print("Oldest timestamp...")
+    print("{0} : {1}".format(datetime.fromtimestamp(oldest[0]), oldest[1]))
+    print("\n")
 
 if robocopy is not None:
     print("Transfer statistics (from log)")
