@@ -99,11 +99,11 @@ print("File statistics for drive")
 print("-------------------------------------------------------")
 print("Aggregate size: {0}".format(formatsize(aggregatesize)))
 print("\n")
-print("Extensions found...")
+print("Extensions found: Number of files found")
 for k in sorted(extensions, key=str.lower):
     print("{0}: {1}".format(k, extensions[k]))
 print("\n")
-print("Hidden files found...")
+print("Hidden files found: (None found if none listed)")
 for h in hf:
     print(h)
 print("\n")
