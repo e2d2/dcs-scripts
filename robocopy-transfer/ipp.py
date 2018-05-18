@@ -116,8 +116,10 @@ print("\n")
 print("Most recent timestamp...")
 print("{0} : {1}".format(datetime.fromtimestamp(latest[0]), latest[1]))
 print("\n")
-print("Transfer statistics (from log)")
-print("Start time: {0}".format(timein.isoformat()))
-print("End time: {0}".format(timeout.isoformat()))
-elapsed = timeout - timein
-print("Transfer time: {0}".format(str(elapsed)))
+
+if robocopy is not None:
+    print("Transfer statistics (from log)")
+    print("Start time: {0}".format(timein.isoformat()))
+    print("End time: {0}".format(timeout.isoformat()))
+    elapsed = timeout - timein
+    print("Transfer time: {0}".format(str(elapsed)))
