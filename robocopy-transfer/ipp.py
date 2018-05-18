@@ -18,6 +18,8 @@ hf = []
 hfmatches = ['Thumbs.db', '.DS_Store']
 latest = [0,'']
 robocopy = None
+thisscript = os.path.abspath(os.path.basename(__file__))
+thispath = os.getcwd()
 
 # Pilfered from stackoverflow
 def formatsize(numbytes):
@@ -32,7 +34,7 @@ def formatsize(numbytes):
 
 
 # Ask about the path
-print("The current path is: {0}".format(os.getcwd()))
+print("The current path is: {0}".format(thispath))
 print("If this is the robocopy directory, type YES to proceed.")
 prompt = input()
 if prompt != "YES":
@@ -41,14 +43,14 @@ if prompt != "YES":
 
 
 # Loop through everything and try to figure out which one is the log
-for dirpath, dirnames, filenames in os.walk('.'): # TODO Fix this
+for dirpath, dirnames, filenames in os.walk(thispath): # TODO Fix this
     for fn in filenames:
         # This file
         f = os.path.join(dirpath, fn)
 
-        if f.find('robocopy') != -1 and robocopy is None:
-            checkrobocopy = input("is this the robocopy log? y/n " + 
-            "{0}: ".format(f))
+        if os.path.basename(f).find('robocopy') != -1 and robocopy is None:
+            checkrobocopy = input("is this the robocopy log? y/n \n" + 
+            "{0}\n".format(f))
 
             if checkrobocopy.lower() == 'y':
                 robocopy = f
@@ -69,9 +71,13 @@ for dirpath, dirnames, filenames in os.walk('.'): # TODO Fix this
                                 timeout = datetime.strptime(rend.group(1),
                                           '%A, %B %d, %Y %I:%M:%S %p')
 
+        # Also ignore self
+        elif f == thisscript:
+            continue
+
         # Only calculate timestamp for nonlog
         else:
-            # Earliest mod timestamp
+            # Latest mod timestamp
             ts = os.path.getmtime(f)
             if ts > latest[0]:
                 latest[0] = ts
