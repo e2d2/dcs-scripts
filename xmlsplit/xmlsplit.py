@@ -48,7 +48,9 @@ with open(args.inputxml) as xmlfile:
                         if dfc.attrib['code'] == 'b':
                             barcode = dfc.text
 
-            record = ET.ElementTree(elem)
+            newrec = ET.Element('collection')
+            newrec.insert(0, elem)
+            record = ET.ElementTree(newrec)
 
             outputxmlname = '{0}_{1}_{2}.xml'.format(bibid, barcode, ldr)
             outputdest = os.path.join(outputdir, outputxmlname)
