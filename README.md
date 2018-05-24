@@ -8,6 +8,7 @@ A collection of scripts written by Dianne Dietrich for Digital Curation Services
 * [metayml](metayml) - Attempts to scriptify meta.yml creation for HT packaging through templates
 * [proquest-metadata](proquest-metadata) - Generating a meta-lookup table for data within a ProQuest data package
 * [robocopy-transfer](robocopy-transfer) - File statistics and Robocopy log parsing for data transfer on external media
+* [xmlsplit](xmlsplit) - Breaking up MARCXML into separate files for preservation and HT ingest
 
 To do list:
 * Refoldering using bash commands
