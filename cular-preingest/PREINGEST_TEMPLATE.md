@@ -3,7 +3,7 @@ THIS DOCUMENT HAS BEEN GENERATED AUTOMATICALLY
 
 Depositor: **The Division of Rare and Manuscript Collections**  
 Collection title: **$COLLECTION_TITLE**  
-CULAR title: $CULAR_TITLE**  
+CULAR title: **$CULAR_TITLE**  
 Date Finalized:  
 
 
