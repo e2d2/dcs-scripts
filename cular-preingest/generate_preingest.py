@@ -8,6 +8,7 @@ from string import Template
 # Output:
 # Rule:
 
+# TODO: This is not properly generalized!!
 
 def main():
     parser = argparse.ArgumentParser()
@@ -16,7 +17,7 @@ def main():
     args = parser.parse_args()
 
     # Load the template file as a string
-    rmctmpl = open('PREINGEST_TEMPLATE.md', 'rU').read()
+    rmctmpl = open('PREINGEST_TEMPLATE_RMC.md', 'rU').read()
     rmctmpl = Template(rmctmpl)
 
     infile = csv.DictReader(args.infile, delimiter='\t')
