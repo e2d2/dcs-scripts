@@ -55,7 +55,7 @@ Technical Plan
     b. Metadata, JSON, and _Documentation folder and contents will be ingested into CULAR-Classic
     c. Destination path is RMC/$RMC_SUBDIVISION/$CULAR_TITLE
 2. Resources:
-    a. The source for assets is smb://files.cornell.edu/lib/$RMC_SERVER/$CULAR_TITLE
+    a. The source for assets is smb://files.cornell.edu/lib/$RMC_SERVER/$CULAR_TITLE/FOR_CULAR
     b. Aggregate size is $AGGREGATE_SIZE
         * $NUMBER_TYPE_LIST
     c. Ingest as arranged at source
