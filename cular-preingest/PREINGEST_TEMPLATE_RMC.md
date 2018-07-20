@@ -69,5 +69,5 @@ Technical Plan
 5. Filesystem dates do not need to be captured.
 6. The assets are not believed to contain sensitive data.
 7. When ingest is complete developers will notify **Dianne Dietrich** who will work with depositor to obtain final sign off.
-8. **Dianne Dietrich** will delete files from CULARingest when ingest is completed. **Erin Faulder** will coordinate deletion from other source source shares.
+8. **Dianne Dietrich** will delete files from CULARingest when ingest is completed. **Erin Faulder** will coordinate deletion from other source shares.
 9. No regular additions of assets to this collection are expected, although future deposits may occur.
