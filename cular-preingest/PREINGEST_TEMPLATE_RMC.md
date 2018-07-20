@@ -61,10 +61,10 @@ Technical Plan
     c. Ingest as arranged at source
     d. JSON manifest for assets is placed directly within the source folder.
 3. Documentation:
-    a. The source for the _Documentation folder is smb://files.cornell.edu/lib/CULARIngest/RMC/$CULAR_TITLE
+    a. The source for the _Documentation folder is smb://files.cornell.edu/lib/CULARIngest/RMC/$RMC_SUBDIVISION/$CULAR_TITLE
     b. Ingest as arranged
 4. Metadata:
-    a. The source for collection level metadata is smb://files.cornell.edu/lib/CULARIngest/RMC/$CULAR_TITLE/$CULAR_TITLE.xml
+    a. The source for collection level metadata is smb://files.cornell.edu/lib/CULARIngest/RMC/$RMC_SUBDIVISION/$CULAR_TITLE/$CULAR_TITLE.xml
     b. The source for the JSON manifest created through ingest is smb://files.cornell.edu/lib/CULARIngest/RMC/$RMC_SUBDIVISION/$CULAR_TITLE.json
 5. Filesystem dates do not need to be captured.
 6. The assets are not believed to contain sensitive data.
