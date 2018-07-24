@@ -1,6 +1,14 @@
-#!/bin/bash
+#/bin/bash
 
-# Command to call bagit.py
-BAGIT=$(python3 -m bagit)
+# Bagit executable
+BAGIT="python3 -m bagit"
 
-$BAGIT
+# Bagit command
+BAGITCMD="${BAGIT} --md5"
+
+if [ -d $1 ]; then
+	bagdir=${1%/}
+	for b in $(find ${bagdir} -type d -maxdepth 1 -mindepth 1); do
+		${BAGITCMD} ${b};
+		zip ${b}.zip ${b}; done
+fi
