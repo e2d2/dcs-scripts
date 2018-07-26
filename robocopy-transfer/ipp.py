@@ -132,7 +132,7 @@ if oldest != [315537897600, ''] and oldest[1] != latest[1]:
     print("\n")
 
 if robocopy is not None:
-    print("Transfer statistics (from log)")
+    print("Transfer statistics (from original robocopy log)")
     print("Start time: {0}".format(timein.isoformat()))
     print("End time: {0}".format(timeout.isoformat()))
     elapsed = timeout - timein
