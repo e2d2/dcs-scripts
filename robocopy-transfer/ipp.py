@@ -107,7 +107,7 @@ for dirpath, dirnames, filenames in os.walk(thispath): # TODO Fix this
 # Print everything out really nicely
 print("\n")
 print("-------------------------------------------------------")
-print("File statistics for drive")
+print("File statistics for most recent deposit")
 print("-------------------------------------------------------")
 print("Aggregate size: {0}".format(formatsize(aggregatesize)))
 print("\n")
