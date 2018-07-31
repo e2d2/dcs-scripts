@@ -107,7 +107,7 @@ for dirpath, dirnames, filenames in os.walk(thispath): # TODO Fix this
 # Print everything out really nicely
 print("\n")
 print("-------------------------------------------------------")
-print("File statistics for drive")
+print("File statistics for most recent deposit")
 print("-------------------------------------------------------")
 print("Aggregate size: {0}".format(formatsize(aggregatesize)))
 print("\n")
@@ -132,7 +132,7 @@ if oldest != [315537897600, ''] and oldest[1] != latest[1]:
     print("\n")
 
 if robocopy is not None:
-    print("Transfer statistics (from log)")
+    print("Transfer statistics (from original robocopy log)")
     print("Start time: {0}".format(timein.isoformat()))
     print("End time: {0}".format(timeout.isoformat()))
     elapsed = timeout - timein
