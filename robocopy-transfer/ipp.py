@@ -80,8 +80,7 @@ for dirpath, dirnames, filenames in os.walk(thispath): # TODO Fix this
         else:
             # Latest mod timestamp
             ts = os.path.getmtime(f)
-            print("are we here")
-            print(ts, oldest[0])
+            #print(ts, oldest[0])
             if ts > latest[0]:
                 latest[0] = ts
                 latest[1] = f
@@ -100,8 +99,8 @@ for dirpath, dirnames, filenames in os.walk(thispath): # TODO Fix this
         aggregatesize = aggregatesize + os.path.getsize(f)
 
         # Hidden files
-        if f in hfmatches:
-            hf.append[fn]
+        if fn in hfmatches:
+            hf.append(f)
 
 
 # Print everything out really nicely
