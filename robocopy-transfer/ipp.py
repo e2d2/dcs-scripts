@@ -56,7 +56,7 @@ for dirpath, dirnames, filenames in os.walk(thispath): # TODO Fix this
             if checkrobocopy.lower() == 'y':
                 robocopy = f
 
-                with open(f, 'rU') as rlog:
+                with open(f, 'r') as rlog:
                     robocopylog = rlog.readlines()
                     timein = None
                     timeout = None
@@ -76,11 +76,20 @@ for dirpath, dirnames, filenames in os.walk(thispath): # TODO Fix this
         elif f == thisscript:
             continue
 
+        # Also ignore hidden files
+        elif fn in hfmatches:
+            hf.append(f)
+
+        # Also ignore select system files
+        # elif SYSTEM SOMETHING
+        #   pass
+
+        # Calculations only for non-log, non-script, non-ignored files
         # Only calculate timestamp for nonlog
+        # Extensions and counts only for these files
+        # Aggregate size only for these files
         else:
-            # Latest mod timestamp
             ts = os.path.getmtime(f)
-            #print(ts, oldest[0])
             if ts > latest[0]:
                 latest[0] = ts
                 latest[1] = f
@@ -88,19 +97,18 @@ for dirpath, dirnames, filenames in os.walk(thispath): # TODO Fix this
                 oldest[0] = ts
                 oldest[1] = f
 
-        # Extensions and Counts
-        ext = os.path.splitext(f)[1]
-        if ext == '':
-            extensions['NO EXTENSION'] += 1
-        else:
-            extensions[ext] = extensions[ext] + 1
+            # Extensions and Counts
+            ext = os.path.splitext(f)[1]
+            if ext == '':
+                extensions['NO EXTENSION'] += 1
+            else:
+                extensions[ext] = extensions[ext] + 1
 
-        # Aggregate size
-        aggregatesize = aggregatesize + os.path.getsize(f)
+            # Aggregate size
+            aggregatesize = aggregatesize + os.path.getsize(f)
 
-        # Hidden files
-        if fn in hfmatches:
-            hf.append(f)
+
+
 
 
 # Print everything out really nicely
