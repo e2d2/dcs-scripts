@@ -9,10 +9,11 @@ Date Finalized:
 
 Partners
 --------
-1. **Erin Faulder**, **Digital Archivist**, will represent the depositor, The Division of Rare and Manuscript Collections (RMC).
-2. **Erin Faulder**, **Digital Archivist**, will coordinate licensing, access rights, and make records of this available for deposit.
-3. **Dianne Dietrich**, **Digital Projects Librarian**, will assist in arrangement of the assets and coordination of the deposit according to the plan described below.
-4. **Michelle Paolillo**, **CULAR Service Manager**, will work directly with Dianne to determine the logistics of the flow of assets from current storage into preservation storage. She will also coordinate the work of the development team to facilitate ingest.
+* $PARTNER_STRING_LIST
+* **Erin Faulder**, **Digital Archivist**, will represent the depositor, The Division of Rare and Manuscript Collections (RMC).
+* **Erin Faulder**, **Digital Archivist**, will coordinate licensing, access rights, and make records of this available for deposit.
+* **Dianne Dietrich**, **Digital Projects Librarian**, will assist in arrangement of the assets and coordination of the deposit according to the plan described below.
+* **Michelle Paolillo**, **CULAR Service Manager**, will work directly with Dianne to determine the logistics of the flow of assets from current storage into preservation storage. She will also coordinate the work of the development team to facilitate ingest.
 
 
 Assets
