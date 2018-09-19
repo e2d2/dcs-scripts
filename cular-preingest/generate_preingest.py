@@ -8,7 +8,7 @@ from string import Template
 # Output:
 # Rule:
 
-# TODO: This is not properly generalized!!
+# TODO: This might now be properly generalized!!
 
 def main():
     parser = argparse.ArgumentParser()

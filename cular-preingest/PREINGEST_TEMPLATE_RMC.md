@@ -9,7 +9,7 @@ Date Finalized:
 
 Partners
 --------
-* $PARTNER_STRING_LIST
+* **$CURATOR**, **$CURATOR_ROLE**, curates the archival collection on behalf of The Division of Rare and Manuscript Collections.
 * **Erin Faulder**, **Digital Archivist**, will represent the depositor, The Division of Rare and Manuscript Collections (RMC).
 * **Erin Faulder**, **Digital Archivist**, will coordinate licensing, access rights, and make records of this available for deposit.
 * **Dianne Dietrich**, **Digital Projects Librarian**, will assist in arrangement of the assets and coordination of the deposit according to the plan described below.
@@ -22,6 +22,7 @@ Assets
     a. Intellectual description: the EAD collection level metadata describes the content, as does the RMC collection finding aid. Refer to RMC with this citation for more information: $CITATION. Division of Rare and Manuscript Collections, Cornell University Library.
     b. Technical description: The collection consists of files in these versions 
         * $TECH_SPEC_STRING_LIST
+        * Files with EXIFTOOL output in XML format that describes technical attributes of the assets in greater detail.
 2. Designated Community:
     a. Subject tracings are included in the EAD collection level metadata and the RMC finding aid.
 3. Rights statement prepared by Copyright Services:
